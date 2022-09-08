@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.landing-box {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* 横杠 */
+.landing-box .hgrid-box .hgrid-item {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    border-bottom: 1px solid transparent;
+}
+
+@keyframes hgrid-1 {
+    0% {
+        left: 50%;
+        right: 50%;
+        width: 0;
+    }
+
+    100% {
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+}
+
+@keyframes hgrid-2 {
+    0% {
+        left: 37.5%;
+        right: 62.5%;
+        width: 0;
+    }
+
+    100% {
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+}
+
+@keyframes hgrid-3 {
+    0% {
+        left: 75%;
+        right: 25%;
+        width: 0;
+    }
+
+    100% {
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+}
+
+@keyframes hgrid-4 {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+}
+
+@keyframes hgrid-5 {
+    0% {
+        left: 50%;
+        right: 50%;
+        width: 0;
+    }
+
+    100% {
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+}
+
+/* 竖杠 */
+.landing-box .vgrid-box .vgrid-item {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    border-right: 1px solid transparent;
+}
+
+.vgrid-item:last-child,
+.vgrid-item:first-child {
+    animation: vgrid-50 3s linear 1;
+}
+
+.vgrid-item:nth-child(odd) {
+    animation: vgrid-25 3s linear 1;
+}
+
+.vgrid-item:nth-child(even) {
+    animation: vgrid-75 3s linear 1;
+}
+
+@keyframes vgrid-25 {
+    0% {
+        top: 25%;
+        bottom: -75%;
+        height: 0%;
+    }
+
+    100% {
+        top: 0%;
+        bottom: 0;
+        height: 100%;
+    }
+}
+
+@keyframes vgrid-50 {
+    0% {
+        top: 50%;
+        bottom: -50%;
+        height: 0%;
+    }
+
+    100% {
+        top: 0%;
+        bottom: 0%;
+        height: 100%;
+    }
+}
+
+@keyframes vgrid-75 {
+    0% {
+        top: 75%;
+        bottom: -75%;
+        height: 0%;
+    }
+
+    100% {
+        top: 0%;
+        bottom: 0;
+        height: 100%;
+    }
+}
+
+/* 交叉点 */
+.landing-box .cross-box .cross-item {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    transform: translate(-45%, -45%) rotate(0);
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-clip-path: polygon(50% 0%,
+            61% 35%,
+            98% 35%,
+            68% 57%,
+            79% 91%,
+            50% 70%,
+            21% 91%,
+            32% 57%,
+            2% 35%,
+            39% 35%);
+    clip-path: polygon(50% 0%,
+            61% 35%,
+            98% 35%,
+            68% 57%,
+            79% 91%,
+            50% 70%,
+            21% 91%,
+            32% 57%,
+            2% 35%,
+            39% 35%);
+    animation: cross-turn 1s linear infinite;
+}
+
+@keyframes cross-turn {
+    0% {
+        transform: translate(-45%, -45%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-45%, -45%) rotate(360deg);
+    }
+}
